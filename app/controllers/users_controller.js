@@ -1,5 +1,4 @@
-const User = require('../models').user,
-  createUser = require('../services/user_service').createUser,
+const createUser = require('../services/user_service').createUser,
   creationError = require('../errors').creationError;
 
 const PASSWORD_MIN_LENGTH = 8;
@@ -22,7 +21,7 @@ const userParams = params => {
 
 exports.signUp = (req, res, next) => {
   const params = userParams(req.parameters);
-  const verifiedParameters = validateUser(params) ? Promise.resolve() : Promise.reject();
+  const verifiedParameters = validateUser(params) ? Promise.resolve(params) : Promise.reject(creationError);
 
   verifiedParameters
     .then(createUser)

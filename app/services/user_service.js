@@ -1,8 +1,18 @@
-const User = require('../models').user;
-const creationError = require('../errors').creationError;
+const User = require('../models').user,
+  creationError = require('../errors').creationError,
+  bcrypt = require('bcrypt');
+
+const SALT_ROUNDS = 10;
 
 exports.createUser = user => {
-  return User.create(user).catch(err => {
-    throw creationError; // tambien puede ser una funcion y le pasas el mensaje del err o uno custom
-  });
+  return bcrypt
+    .hash(user.password, SALT_ROUNDS)
+    .then(hash => {
+      user.password = hash;
+      return user;
+    })
+    .then(u => User.create(u))
+    .catch(err => {
+      return Promise.reject(creationError);
+    });
 };
