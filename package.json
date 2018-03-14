@@ -48,6 +48,7 @@
     "pg": "^4.4.6",
     "rollbar": "^2.3.9",
     "sequelize": "^3.32.1",
+    "strong-params": "^0.7.1",
     "umzug": "^2.0.1",
     "winston": "^2.4.1",
     "winston-daily-rotate-file": "^1.7.2"
