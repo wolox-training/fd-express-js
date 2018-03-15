@@ -1,5 +1,5 @@
 const User = require('../models').user,
-  creationError = require('../errors').creationError,
+  errors = require('../errors'),
   bcrypt = require('bcrypt');
 
 const SALT_ROUNDS = 10;
@@ -13,6 +13,6 @@ exports.createUser = user => {
     })
     .then(u => User.create(u))
     .catch(err => {
-      return Promise.reject(creationError);
+      throw errors.creationError;
     });
 };

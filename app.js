@@ -8,9 +8,9 @@ const express = require('express'),
   errors = require('./app/middlewares/errors'),
   migrationsManager = require('./migrations'),
   logger = require('./app/logger'),
+  params = require('strong-params'),
   DEFAULT_BODY_SIZE_LIMIT = 1024 * 1024 * 10,
-  DEFAULT_PARAMETER_LIMIT = 10000,
-  params = require('strong-params');
+  DEFAULT_PARAMETER_LIMIT = 10000;
 
 const bodyParserJsonConfig = () => ({
   parameterLimit: config.common.api.parameterLimit || DEFAULT_PARAMETER_LIMIT,
