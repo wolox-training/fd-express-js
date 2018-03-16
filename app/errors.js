@@ -9,3 +9,12 @@ exports.defaultError = message => {
     message
   };
 };
+
+const badRequest = message => {
+  return {
+    statusCode: 400,
+    message
+  };
+};
+
+exports.creationError = badRequest('There has been a problem creating the user');

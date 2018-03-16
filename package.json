@@ -39,7 +39,7 @@
     "url": "https://git.almundo.com/smartcom/api-campaigns/issues"
   },
   "dependencies": {
-    "bcrypt": "^1.0.1",
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.14.2",
     "dotenv": "^4.0.0",
     "express": "^4.16.3",
@@ -48,6 +48,7 @@
     "pg": "^4.4.6",
     "rollbar": "^2.3.9",
     "sequelize": "^3.32.1",
+    "strong-params": "^0.7.1",
     "umzug": "^2.0.1",
     "winston": "^2.4.1",
     "winston-daily-rotate-file": "^1.7.2"
