@@ -6,12 +6,7 @@ node_js:
 sudo: true
 
 env:
-  - CXX=g++-4.8
-  - NODE_API_DB_HOST=localhost
-  - NODE_API_DB_USERNAME=express
-  - NODE_API_DB_PASSWORD=express
-  - NODE_API_DB_PORT=5432
-  - NODE_API_DB_NAME_TEST=express
+  - CXX=g++-4.8 NODE_API_DB_HOST=localhost NODE_API_DB_USERNAME=express NODE_API_DB_PASSWORD=express NODE_API_DB_PORT=5432 NODE_API_DB_NAME_TEST=express
 addons:
   apt:
     sources:
