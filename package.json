@@ -61,7 +61,7 @@
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
     "coveralls": "^2.11.9",
-    "dictum.js": "^1.0.0",
+    "dictum.js": "^1.0.4",
     "eslint": "^4.18.2",
     "eslint-config-airbnb-base": "^12.0.2",
     "eslint-config-prettier": "^2.3.1",

@@ -3,6 +3,7 @@ const fs = require('fs'),
   chai = require('chai'),
   chaiHttp = require('chai-http'),
   models = require('../app/models'),
+  dictum = require('dictum.js'),
   dataCreation = require('./../app/models/scripts/dataCreation');
 
 chai.use(chaiHttp);
