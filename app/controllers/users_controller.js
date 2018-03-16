@@ -30,7 +30,6 @@ exports.signUp = (req, res, next) => {
     .then(createdUser => {
       res.status(201);
       res.send(`The user ${createdUser.firstName} ${createdUser.lastName} has succesfully login`);
-      res.end();
     })
     .catch(next);
 };
