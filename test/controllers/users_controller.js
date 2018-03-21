@@ -23,7 +23,7 @@ describe('users controller', () => {
             res.should.have.status(201);
             dictum.chai(res, 'User Creation');
           })
-          .then(done);
+          .then(() => done());
       });
     });
     context('when a required parameter is missing', () => {
@@ -41,7 +41,7 @@ describe('users controller', () => {
           .catch(err => {
             err.should.have.status(400);
           })
-          .then(done);
+          .then(() => done());
       });
     });
     context('when the password does not meet the requirements', () => {
@@ -59,7 +59,7 @@ describe('users controller', () => {
           .catch(err => {
             err.should.have.status(400);
           })
-          .then(done);
+          .then(() => done());
       });
     });
     context('when a user with the same email exists', () => {
@@ -69,7 +69,7 @@ describe('users controller', () => {
           email: 'federico.dinucci@wolox.com.ar',
           firstName: 'Federico',
           lastName: 'Di Nucci'
-        }).then(done());
+        }).then(() => done());
       });
       it('should fail signing up', done => {
         chai
@@ -86,7 +86,7 @@ describe('users controller', () => {
           .catch(err => {
             err.should.have.status(400);
           })
-          .then(done);
+          .then(() => done());
       });
     });
   });

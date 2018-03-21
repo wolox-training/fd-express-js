@@ -17,4 +17,13 @@ const badRequest = message => {
   };
 };
 
+const unauthorized = message => {
+  return {
+    statusCode: 401,
+    message
+  };
+};
+
+exports.credentialsError = unauthorized('Invalid credentials');
+
 exports.creationError = badRequest('There has been a problem creating the user');
