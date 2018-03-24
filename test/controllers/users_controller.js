@@ -21,6 +21,9 @@ describe('users controller', () => {
           })
           .then(res => {
             res.should.have.status(201);
+            User.findOne({ where: { email: 'federico.dinucci@wolox.com.ar' } }).then(
+              foundUser => foundUser.should.not.be.null
+            );
             dictum.chai(res, 'User Creation');
           })
           .then(done);
