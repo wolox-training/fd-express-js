@@ -4,5 +4,4 @@ const userController = require('./controllers/users_controller'),
 exports.init = app => {
   app.post('/users', userController.signUp);
   app.post('/users/sessions', sessionController.logIn);
-  // app.post('/endpoint/post/path', [], controller.methodPOST);
 };

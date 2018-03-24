@@ -2,9 +2,7 @@ const sessionService = require('../services/session_service'),
   errors = require('../errors'),
   sessionManager = require('../manager/session_manager');
 
-const sessionParams = params => {
-  return params.permit('email', 'password').value();
-};
+const sessionParams = params => params.permit('email', 'password').value();
 
 exports.logIn = (req, res, next) => {
   const params = sessionParams(req.parameters);

@@ -1,21 +1,17 @@
-const User = require('../models').user,
+const bcrypt = require('bcrypt'),
   errors = require('../errors'),
-  bcrypt = require('bcrypt');
+  User = require('../models').user;
 
 exports.login = user => {
-  return User.findOne({ where: { email: user.email } })
-    .then(foundUser => {
-      if (!foundUser) {
+  return User.findOne({ where: { email: user.email } }).then(foundUser => {
+    if (!foundUser) {
+      throw errors.credentialsError;
+    }
+    return bcrypt.compare(user.password, foundUser.password).then(match => {
+      if (!match) {
         throw errors.credentialsError;
       }
-      return bcrypt.compare(user.password, foundUser.password).then(match => {
-        if (!match) {
-          throw errors.credentialsError;
-        }
-        return foundUser;
-      });
-    })
-    .catch(err => {
-      throw err;
+      return foundUser;
     });
+  });
 };
