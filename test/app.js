@@ -2,6 +2,7 @@ const fs = require('fs'),
   path = require('path'),
   chai = require('chai'),
   chaiHttp = require('chai-http'),
+  dictum = require('dictum.js'),
   models = require('../app/models'),
   dataCreation = require('./../app/models/scripts/dataCreation');
 
