@@ -1,7 +1,7 @@
-const userController = require('./controllers/users_controller');
+const userController = require('./controllers/users_controller'),
+  sessionController = require('./controllers/sessions_controller');
 
 exports.init = app => {
   app.post('/users', userController.signUp);
-  // app.put('/endpoint/put/path', [], controller.methodPUT);
-  // app.post('/endpoint/post/path', [], controller.methodPOST);
+  app.post('/users/sessions', sessionController.logIn);
 };
