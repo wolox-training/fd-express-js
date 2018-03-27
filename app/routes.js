@@ -5,5 +5,5 @@ const userController = require('./controllers/users_controller'),
 exports.init = app => {
   app.post('/users', userController.signUp);
   app.post('/users/sessions', sessionController.logIn);
-  app.get('/users', [authentication.handle], userController.index);
+  app.get('/users', authentication.handle, userController.index);
 };

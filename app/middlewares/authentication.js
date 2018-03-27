@@ -19,9 +19,7 @@ exports.handle = (req, res, next) => {
             next(errors.notLoggedError);
           }
         })
-        .catch(err => {
-          next(err);
-        });
+        .catch(next);
     })
     .catch(err => {
       next(errors.notLoggedError);
