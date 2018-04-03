@@ -2,6 +2,7 @@ const userController = require('./controllers/users_controller'),
   adminController = require('./controllers/admin_controller'),
   authentication = require('../app/middlewares/authentication'),
   sessionController = require('./controllers/sessions_controller'),
+  albumsController = require('../app/controllers/albums_controller'),
   adminPermissions = require('../app/middlewares/admin_permissions');
 
 exports.init = app => {
@@ -9,4 +10,5 @@ exports.init = app => {
   app.post('/admin/users', [authentication.handle, adminPermissions.handle], adminController.create);
   app.post('/users/sessions', sessionController.logIn);
   app.get('/users', authentication.handle, userController.index);
+  app.get('/albums', authentication.handle, albumsController.index);
 };
