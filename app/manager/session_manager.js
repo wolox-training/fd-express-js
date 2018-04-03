@@ -14,12 +14,11 @@ exports.decode = toDecode => {
   });
 };
 
-exports.generateAccessToken = user => ({
-  token: jwt.encode(
+exports.generateAccessToken = user => {
+  return jwt.encode(
     {
-      authenticationCode: user.authenticationCode,
       id: user.id
     },
     SECRET
-  )
-});
+  );
+};
